@@ -3,11 +3,11 @@ apply plugin: 'com.android.application'
 android {
     compileSdkVersion 27
     defaultConfig {
-        applicationId "kr.co.dodoom.sacoop"
-        minSdkVersion 15
+        applicationId "kr.appfactory.earlyvote"
+        minSdkVersion 21
         targetSdkVersion 27
         versionCode 1
-        versionName "1.0"
+        versionName "1.1"
         testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
     }
     buildTypes {
@@ -16,7 +16,7 @@ android {
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
             applicationVariants.all { variant ->
                 variant.outputs.all {
-                    def appName = "sacoop_"
+                    def appName = "earlyvote_"
                     def buildType = variant.variantData.variantConfiguration.buildType.name
                     def newName
                     if (buildType == 'debug'){
@@ -41,13 +41,9 @@ dependencies {
     testImplementation 'junit:junit:4.12'
     androidTestImplementation 'com.android.support.test:runner:1.0.2'
 
-    implementation 'com.google.firebase:firebase-core:11.8.0'
-    implementation 'com.google.firebase:firebase-messaging:11.8.0'
     implementation  'com.squareup.okhttp3:okhttp:3.8.0'
 
     androidTestImplementation 'com.android.support.test.espresso:espresso-core:3.0.2'
 
 
 }
-
-apply plugin: 'com.google.gms.google-services'
