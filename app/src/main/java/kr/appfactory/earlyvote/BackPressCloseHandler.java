@@ -3,7 +3,11 @@ package kr.appfactory.earlyvote;
 import android.app.Activity;
 import android.app.AlertDialog;
 import android.content.DialogInterface;
+import android.util.Log;
 import android.widget.Toast;
+
+import java.util.Timer;
+import java.util.TimerTask;
 
 public class BackPressCloseHandler {
     private Activity activity;
@@ -22,7 +26,17 @@ public class BackPressCloseHandler {
         } else if (System.currentTimeMillis() <= this.backKeyPressedTime + 1000) {
             this.toast.cancel();
 
-                    activity.finish();
+            AdsFull.getInstance(activity.getApplicationContext()).setAdsFull();
+            Timer timer = new Timer();
+            timer.schedule( new TimerTask()
+                            {
+                                public void run()
+                                {
+                                    activity.finish();
+                                }
+                            }
+                    , 1000);
+
         }
     }
 

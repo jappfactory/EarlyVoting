@@ -33,9 +33,7 @@ import java.util.List;
 public class MainActivity extends AppCompatActivity {
     private static final String TAG = MainActivity.class.getSimpleName();
     private WebView mWebView;
-    private Context mContext=MainActivity.this;
     final AppCompatActivity activity = this;
-    private static final int REQUEST = 112;
     private static final int MY_PERMISSION_REQUEST_LOCATION = 0;
     private static  int networkYn = 0;
     private ProgressDialog pd;
@@ -46,31 +44,9 @@ public class MainActivity extends AppCompatActivity {
 
 
 
-    private static boolean hasPermissions(Context context, String... permissions) {
-        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M && context != null && permissions != null) {
-            for (String permission : permissions) {
-                if (ActivityCompat.checkSelfPermission(context, permission) != PackageManager.PERMISSION_GRANTED) {
-                    return false;
-                }
-            }
-        }
-        return true;
-    }
-
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
-
-        if (Build.VERSION.SDK_INT >= 23) {
-            String[] PERMISSIONS = {android.Manifest.permission.ACCESS_FINE_LOCATION,android.Manifest.permission.ACCESS_COARSE_LOCATION};
-            if (!hasPermissions(mContext, PERMISSIONS)) {
-                ActivityCompat.requestPermissions((Activity) mContext, PERMISSIONS, REQUEST );
-            } else {
-                //do here
-            }
-        } else {
-            //do here
-        }
 
 
         this.backPressCloseHandler = new BackPressCloseHandler(this);

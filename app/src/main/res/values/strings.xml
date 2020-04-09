@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">사전투표소 찾기</string>
+    <string name="app_name">우리동네 사전투표소</string>
 
     <string name="dummy_button">Dummy Button</string>
     <string name="dummy_content">DUMMY\nCONTENT</string>
@@ -9,4 +9,9 @@
     <string name="exitmsgY">종료</string>
     <string name="exitmsgN">취소</string>
     <string name="title_activity_splash">SplashActivity</string>
+
+
+    <string name="banner_ad_unit_id">ca-app-pub-3808489523903055/8705505583</string>
+    <string name="ap_ad_id">ca-app-pub-3808489523903055~7276680327</string>
+
 </resources>
